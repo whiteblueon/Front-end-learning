@@ -1,8 +1,36 @@
+#container{
+    margin: 50px auto;
+    border: #00fffc 1px solid;
+    width: 800px;
+}
 #header{
-    background: #ff0000;
+    background: #00fffc;
+    height: 50px;
+
+    line-height: 50px;
+    font-size: 50px;
+}
+#sidebar{
+    border-right: 1px solid #00fffc; 
+    float: left;   
+    width: 30%;
+    height: 400px;
+    
+}
+#sidebar .content{
+    margin: 50px 20px;
+}
+#content{   
+    width: 69%;
+    float: left;
+    height: 400px;
+}
+#content .content{
+    margin: 50px 20px;
+}
+#footer{
+    background: #00fffc;
     height: 50px;
     line-height: 50px;
-}
-#sidebar+content{
-    float: left;
+    clear: both;
 }
