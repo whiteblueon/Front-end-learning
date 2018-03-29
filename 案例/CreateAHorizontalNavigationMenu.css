@@ -1,0 +1,21 @@
+
+#menu{
+    list-style: none;
+}
+#menu li{
+    background: #00fffc;
+    float: left;
+    margin: 1px;
+    width: 120px;
+    line-height: 25px;
+    height: 25px;
+    text-indent: 37px;
+}
+#menu a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#menu a:hover{background: #0ff00f;
+}
