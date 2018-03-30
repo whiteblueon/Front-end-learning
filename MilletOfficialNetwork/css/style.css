@@ -12,6 +12,15 @@ ul, ol{
 a{
     text-decoration: none;
 }
+.nav{
+    background: #333;
+    height: 40px;
+}
+.nav ul{
+    float: left;
+    line-height: 40px;
+    color: #b0b0b0;
+}
 /* banner的开始 */
 .banner{
     height: 120px;
