@@ -12,7 +12,14 @@ ul, ol{
 a{
     text-decoration: none;
 }
+/* banner的开始 */
 .banner{
     height: 120px;
     background: url("../img/xmad_15222098664539_DuOHr.jpg") no-repeat 50% 50%;
+}
+.banner a{
+    display: block;
+    width: 100%;
+    height: 100%;
 } 
+/* banner的结束 */
