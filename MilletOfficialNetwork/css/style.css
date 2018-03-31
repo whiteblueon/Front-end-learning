@@ -33,8 +33,12 @@ a{
     color: #b0b0b0;
     font-size: 12px;
 }
+.main-menu a:hover{
+    color: #fff;
+}
 .main-menu .sep{
     color: #424242;
+    margin: 0 6px;
 }
 /* nav的结束 */
 /* banner的开始 */
