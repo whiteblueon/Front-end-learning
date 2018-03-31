@@ -12,6 +12,11 @@ ul, ol{
 a{
     text-decoration: none;
 }
+.wipper{
+    width: 1226px;
+    margin: 0 auto;
+}
+/* nav的开始 */
 .nav{
     background: #333;
     height: 40px;
@@ -21,10 +26,22 @@ a{
     line-height: 40px;
     color: #b0b0b0;
 }
+.main-menu li{
+    float: left;
+}
+.main-menu a{
+    color: #b0b0b0;
+    font-size: 12px;
+}
+.main-menu .sep{
+    color: #424242;
+}
+/* nav的结束 */
 /* banner的开始 */
 .banner{
     height: 120px;
-    background: url("../img/xmad_15222098664539_DuOHr.jpg") no-repeat 50% 50%;
+    background: 
+    url("../img/xmad_15222098664539_DuOHr.jpg") no-repeat 50% 50%;
 }
 .banner a{
     display: block;
