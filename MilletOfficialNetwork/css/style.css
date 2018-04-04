@@ -21,22 +21,27 @@ a{
     background: #333;
     height: 40px;
 }
-.nav ul{
+.nav .main-menu{
     float: left;
     line-height: 40px;
     color: #b0b0b0;
 }
-.main-menu li{
+.nav .user-info{
+    float: right;
+    line-height: 40px;
+    color: #b0b0b0;
+}
+.nav li{
     float: left;
 }
-.main-menu a{
+.nav a{
     color: #b0b0b0;
     font-size: 12px;
 }
-.main-menu a:hover{
+.nav a:hover{
     color: #fff;
 }
-.main-menu .sep{
+.nav .sep{
     color: #424242;
     margin: 0 6px;
 }
