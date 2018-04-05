@@ -45,6 +45,10 @@ a{
     color: #424242;
     margin: 0 6px;
 }
+.cart-box{
+    width: 316px;
+    height: 100px;
+}
 /* nav的结束 */
 /* banner的开始 */
 .banner{
