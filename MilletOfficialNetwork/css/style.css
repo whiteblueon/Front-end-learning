@@ -16,6 +16,9 @@ a{
     width: 1226px;
     margin: 0 auto;
 }
+body{
+    background: #fff;
+}
 /* nav的开始 */
 .nav{
     background: #333;
@@ -64,13 +67,16 @@ a{
     box-shadow: 0 2px 10px rgba(0, 0, 0, 15);
     margin-top: 40px;
     right:0;
-    display: none;  
+    display: none; /* 购物车   */   
 }
 .cart a:hover{
     background: #fff;
     color: #f60
 }
 /* nav的结束 */
+.site-header{
+    
+}
 /* banner的开始 */
 .banner{
     height: 120px;
