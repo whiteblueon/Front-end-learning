@@ -53,6 +53,7 @@ body{
     height: 40px;
     text-align: center;
     position: relative;
+    background: #424242;
 }
 .cart a{
     width: 100%;
@@ -74,9 +75,11 @@ body{
     color: #f60
 }
 /* nav的结束 */
+/* .site-header开始 */
 .site-header{
-    
+
 }
+/* .site-header结束 */
 /* banner的开始 */
 .banner{
     height: 120px;
