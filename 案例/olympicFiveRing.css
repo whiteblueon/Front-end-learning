@@ -7,26 +7,42 @@
 }
 .circle::after{
     content:'';
-
+    left:-10px;
+    top:-10px;
 }
 .blue{ 
+    border-color: blue;
+}
+.blue:after{ 
     border-color: blue;
 }
 .black{
     border-color:black;
     left: 250px;   
 }
+.black:after{
+    border-color:black;  
+}
 .red{
     border-color:red;
     left: 490px;   
+}
+.red:after{
+    border-color:red;   
 }
 .yellow{
     border-color:yellow;
     left: 130px; 
     top: 100px; 
 }
+.yellow:after{
+    border-color:yellow;
+}
 .green{
     border-color:green;
     left: 380px;  
     top: 100px;
+}
+.green:after{
+    border-color:green;
 }
