@@ -15,20 +15,26 @@
 }
 .blue:after{ 
     border-color: blue;
+    z-index: 1;
+    border-bottom-color: transparent;
 }
 .black{
     border-color:black;
     left: 250px;   
 }
 .black:after{
-    border-color:black;  
+    border-color:black;
+    border-left-color: transparent;
+    z-index: 1;  
 }
 .red{
     border-color:red;
     left: 490px;   
 }
 .red:after{
-    border-color:red;   
+    border-color:red;
+    z-index: 3;
+    border-left-color: transparent;   
 }
 .yellow{
     border-color:yellow;
@@ -41,8 +47,11 @@
 .green{
     border-color:green;
     left: 380px;  
-    top: 100px;
+    top: 100px;  
 }
 .green:after{
     border-color:green;
+    z-index: 2;
+    border-top-color: transparent;
+    
 }
