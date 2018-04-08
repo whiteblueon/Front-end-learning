@@ -2,7 +2,36 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    position: absolute; 
+}
+.circle::after{
+    content:'';
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute; 
+}
+.blue{
+    border: blue 10px solid;  
+}
+.blue::after{
+    border: blue 10px solid;
+}
+.black{
+    border: black 10px solid;
+    left: 250px;   
 }
 .red{
-    border: red 1px solid;
+    border: red 10px solid;
+    left: 490px;   
+}
+.yellow{
+    border: yellow 10px solid; 
+    left: 130px; 
+    top: 100px; 
+}
+.green{
+    border: green 10px solid; 
+    left: 380px;  
+    top: 100px;
 }
