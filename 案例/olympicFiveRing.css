@@ -1,37 +1,32 @@
-.circle{
+.circle,.circle::after{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    position: absolute; 
+    position: absolute;
+    border: 10px solid; 
 }
 .circle::after{
     content:'';
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: absolute; 
+
 }
-.blue{
-    border: blue 10px solid;  
-}
-.blue::after{
-    border: blue 10px solid;
+.blue{ 
+    border-color: blue;
 }
 .black{
-    border: black 10px solid;
+    border-color:black;
     left: 250px;   
 }
 .red{
-    border: red 10px solid;
+    border-color:red;
     left: 490px;   
 }
 .yellow{
-    border: yellow 10px solid; 
+    border-color:yellow;
     left: 130px; 
     top: 100px; 
 }
 .green{
-    border: green 10px solid; 
+    border-color:green;
     left: 380px;  
     top: 100px;
 }
