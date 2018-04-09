@@ -102,6 +102,7 @@ body{
 .site-header .header-logo:after{
     content: '';
     background: url("../img/logo-footer.png") no-repeat 50% 50%;
+    display: block;
     height: 55px;
     width: 55px;
     float: left;
@@ -111,6 +112,7 @@ body{
     left: 158px;
     height: 100%;
     background: #cccccc;
+    float: left;
 }
 .site-header .nav-item{
     float: left;
