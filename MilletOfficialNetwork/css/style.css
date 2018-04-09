@@ -88,13 +88,17 @@ body{
 }
 /* nav的结束 */
 /* .site-header开始 */
-.site-header .logo{
+.site-header{
+    position: relative;
+    height: 100px;
+}
+.site-header .header-logo{
     display: block;
     height: 55px;
     width: 55px;
     background: #ff6700;
 }
-.site-header .logo:after{
+.site-header .header-logo:after{
     content: '';
     background: url("../img/logo-footer.png") no-repeat 50% 50%;
     height: 55px;
@@ -102,9 +106,14 @@ body{
     display: block;
     margin-top: 27px;
 }
-.header-nav{
+.site-header .header-nav{
+    position: absolute;
     left: 158px;
-    display: block;
+}
+.site-header .nav-item{
     float: left;
 }
+/* .site-header .nav-item{
+    float: left;
+} */
 /* .site-header结束 */
