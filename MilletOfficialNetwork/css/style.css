@@ -19,6 +19,18 @@ a{
 body{
     background: #fff;
 }
+/* banner的开始 */
+.banner{
+    height: 120px;
+    background: 
+    url("../img/xmad_15222098664539_DuOHr.jpg") no-repeat 50% 50%;
+}
+.banner a{
+    display: block;
+    width: 100%;
+    height: 100%;
+} 
+/* banner的结束 */
 /* nav的开始 */
 .nav{
     background: #333;
@@ -76,19 +88,23 @@ body{
 }
 /* nav的结束 */
 /* .site-header开始 */
-.site-header{
-
+.site-header .logo{
+    display: block;
+    height: 55px;
+    width: 55px;
+    background: #ff6700;
+}
+.site-header .logo:after{
+    content: '';
+    background: url("../img/logo-footer.png") no-repeat 50% 50%;
+    height: 55px;
+    width: 55px;
+    display: block;
+    margin-top: 27px;
+}
+.header-nav{
+    left: 158px;
+    display: block;
+    float: left;
 }
 /* .site-header结束 */
-/* banner的开始 */
-.banner{
-    height: 120px;
-    background: 
-    url("../img/xmad_15222098664539_DuOHr.jpg") no-repeat 50% 50%;
-}
-.banner a{
-    display: block;
-    width: 100%;
-    height: 100%;
-} 
-/* banner的结束 */
