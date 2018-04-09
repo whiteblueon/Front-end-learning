@@ -97,23 +97,24 @@ body{
     height: 55px;
     width: 55px;
     background: #ff6700;
+    margin-top: 27px;
 }
 .site-header .header-logo:after{
     content: '';
     background: url("../img/logo-footer.png") no-repeat 50% 50%;
     height: 55px;
     width: 55px;
-    display: block;
-    margin-top: 27px;
+    float: left;
 }
 .site-header .header-nav{
     position: absolute;
     left: 158px;
+    height: 100%;
+    background: #cccccc;
 }
 .site-header .nav-item{
     float: left;
+    padding: 0 10px;
+    line-height: 100px;
 }
-/* .site-header .nav-item{
-    float: left;
-} */
 /* .site-header结束 */
