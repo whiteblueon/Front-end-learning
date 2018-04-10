@@ -137,11 +137,14 @@ body{
 .header-sub-nav li{
     float: left;
 }
-.header-sub-nav span{
+.header-sub-nav .sub-nav-span1{
     padding: 0 20px; 
     border: 1px solid #ff6700;
     color: #ff6700;
     font-size: 12px;
+}
+.header-sub-nav .sub-nav-span2{
+    margin: 30px;
 }
 .header-sub-nav a{
     display: block;
