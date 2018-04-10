@@ -141,16 +141,20 @@ body{
     padding: 0 20px; 
     border: 1px solid #ff6700;
     color: #ff6700;
+    font-size: 12px;
 }
 .header-sub-nav a{
     display: block;
+    margin: 10px;
 }
 .header-sub-nav p{
     font-size: 12px;
+    margin: 2px;
 }
 .header-sub-nav h1{
     font-size: 12px;
     color:#ff6700;
+    margin: 2px;
 }
 /* .header-nav .nav-item:hover .header-sub-nav{
     display: block;
