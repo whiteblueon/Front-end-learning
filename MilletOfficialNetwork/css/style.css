@@ -90,7 +90,7 @@ body{
 /* nav的结束 */
 /* .site-header开始 */
 .site-header{
-    height: 100px;
+    /* height: 100px; */
     clear: both;
 }
 .site-header .header-logo{
@@ -117,7 +117,10 @@ body{
 .site-header .nav-item{
     float: left;
     padding: 0 10px;
-    line-height: 100px;
+    height: 100px;
+}
+.header-nav-item{
+    height: 100px;
 }
 .nav-item .header-sub-nav{
     position: absolute;
@@ -126,8 +129,10 @@ body{
     box-shadow:0 2px 5px  rgba(0, 0, 0, 15);
     border-top: solid 1px #cccccc;
     text-align: center;
-    box-sizing: border-box; 
     /* display: none; */
+}
+.header-nav-item{
+    line-height: 100px;
 }
 .header-sub-nav li{
     float: left;
@@ -139,6 +144,8 @@ body{
 }
 .header-sub-nav a{
     display: block;
+}
+.header-sub-nav p{
     font-size: 12px;
 }
 .header-sub-nav h1{
