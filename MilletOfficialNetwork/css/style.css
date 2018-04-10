@@ -35,6 +35,7 @@ body{
 .nav{
     background: #333;
     height: 40px;
+    overflow: hidden;
 }
 .nav .main-menu{
     float: left;
@@ -89,14 +90,15 @@ body{
 /* nav的结束 */
 /* .site-header开始 */
 .site-header{
-    position: relative;
     height: 100px;
+    clear: both;
 }
 .site-header .header-logo{
     display: block;
     height: 55px;
     width: 55px;
     background: #ff6700;
+    float: left;
     margin-top: 27px;
 }
 .site-header .header-logo:after{
@@ -105,18 +107,45 @@ body{
     display: block;
     height: 55px;
     width: 55px;
-    float: left;
 }
 .site-header .header-nav{
-    position: absolute;
-    left: 158px;
-    height: 100%;
-    background: #cccccc;
     float: left;
+    background: #cccccc;
+    margin-left: 170px;
+    overflow: hidden;
 }
 .site-header .nav-item{
     float: left;
     padding: 0 10px;
     line-height: 100px;
 }
+.nav-item .header-sub-nav{
+    position: absolute;
+    left: 0;
+    right: 0;
+    box-shadow:0 2px 5px  rgba(0, 0, 0, 15);
+    border-top: solid 1px #cccccc;
+    text-align: center;
+    box-sizing: border-box; 
+    /* display: none; */
+}
+.header-sub-nav li{
+    float: left;
+}
+.header-sub-nav span{
+    padding: 0 20px; 
+    border: 1px solid #ff6700;
+    color: #ff6700;
+}
+.header-sub-nav a{
+    display: block;
+    font-size: 12px;
+}
+.header-sub-nav h1{
+    font-size: 12px;
+    color:#ff6700;
+}
+/* .header-nav .nav-item:hover .header-sub-nav{
+    display: block;
+} */
 /* .site-header结束 */
