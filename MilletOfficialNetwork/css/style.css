@@ -129,13 +129,21 @@ body{
     box-shadow:0 2px 5px  rgba(0, 0, 0, 15);
     border-top: solid 1px #cccccc;
     text-align: center;
-    /* display: none; */
+    display: none;
 }
 .header-nav-item{
     line-height: 100px;
 }
 .header-sub-nav li{
     float: left;
+}
+.header-sub-nav  .sub-nav-span3{
+    display: block;
+    float: left;
+    margin-top: 35px;
+    background: #e0e0e0; 
+    height: 100px;
+    width: 1px;
 }
 .header-sub-nav .sub-nav-span1{
     padding: 0 20px; 
@@ -159,7 +167,7 @@ body{
     color:#ff6700;
     margin: 2px;
 }
-/* .header-nav .nav-item:hover .header-sub-nav{
+.header-nav .nav-item:hover .header-sub-nav{
     display: block;
-} */
+}
 /* .site-header结束 */
