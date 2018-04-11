@@ -121,6 +121,7 @@ body{
 }
 .header-nav-item{
     height: 100px;
+    line-height: 100px;
 }
 .nav-item .header-sub-nav{
     position: absolute;
@@ -130,9 +131,6 @@ body{
     border-top: solid 1px #cccccc;
     text-align: center;
     display: none;
-}
-.header-nav-item{
-    line-height: 100px;
 }
 .header-sub-nav li{
     float: left;
