@@ -90,8 +90,8 @@ body{
 /* nav的结束 */
 /* .site-header开始 */
 .site-header{
-    /* height: 100px; */
     clear: both;
+    overflow: hidden;
 }
 .site-header .header-logo{
     display: block;
