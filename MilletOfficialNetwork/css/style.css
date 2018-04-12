@@ -175,4 +175,10 @@ body{
     height: 230px;
 }
 /* header-sub-nav结束 */
+.header-search{
+    float: right;
+    width: 295px;
+    height: 50px;
+    margin-top: 27px;
+}
 /* .site-header结束 */
