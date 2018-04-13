@@ -181,6 +181,7 @@ body{
     height: 50px;
     border: 1px solid #e0e0e0;
     margin-top: 25px;
+    position: relative;
 }
 .header-search .search-input{
     width: 244px;
@@ -189,16 +190,35 @@ body{
     outline: none;
     border-right: 1px solid #e0e0e0;
     float: left;
+    text-indent: 10px;
+    font-size: 18px;
 }
 .header-search .search-btn{
     width: 50px;
     height: 50px;
     border: 0;
     float: left;
-    background: #fff;
+    background: transparent;
 }
 .header-search .search-btn:hover{
     background: #ff6700;
     color: #fff;
+}
+.header-search .search-list{
+    width: 244px;
+    border: #ff6700 1px solid;
+    position: absolute;
+    left: -1px;
+    top: 50px;
+    z-index: 3;
+}
+.header-search .search-list li{
+    height: 25px;
+    line-height: 25px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.header-search .search-list li:hover{
+    background: #e0e0e0;
 }
 /* .site-header结束 */
