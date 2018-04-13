@@ -19,6 +19,11 @@ a{
 body{
     background: #fff;
 }
+.clearfix::after{
+    content:'';
+    clear: both;
+    display: block;
+}
 /* banner的开始 */
 .banner{
     height: 120px;
@@ -91,7 +96,6 @@ body{
 /* .site-header开始 */
 .site-header{
     clear: both;
-    overflow: hidden;
 }
 .site-header .header-logo{
     display: block;
