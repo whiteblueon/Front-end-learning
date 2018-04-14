@@ -201,8 +201,9 @@ body{
     width: 50px;
     height: 50px;
     border: 0;
-    float: left;
     background: transparent;
+    float: left;
+    transition:all 0.3s ease-out;
 }
 .header-search .search-btn:hover{
     background: #ff6700;
