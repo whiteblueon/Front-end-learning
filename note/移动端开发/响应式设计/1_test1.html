@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+     content="width=device-width, user-scalable = no,
+     initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css1" media="screen and min-width">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        @media screen and (min-width:1200px){
+            /* @media 媒体查询 */
+            /* 设备宽度大于等于1200时红色 */
+          body{
+                background: #ff0000;
+            }
+        }
+        @media screen and (min-width:768px) and (max-width:1199px){
+            /* 设备宽度大于于等于768时且小于于等于1200时橙色 */
+          body{
+                background: #ff6600;
+            }
+        }
+        @media screen and (orientation:landscape){
+            body{
+                background: #00ff00;
+            }
+        }
+        /* orientation：landscape/portrait设备方向 */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- user-scalable = no 不允许用户缩放 -->
+
+<!-- 移动端设计：
+    媒体查询 //低版本浏览器不支持
+    rem
+    弹性盒模型 //低版本浏览器不支持
+    百分比 -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+        class Person{
+            constructor(name,age){
+                this.name=name;//定义属性
+                this.age=age;
+            }
+
+            say(){//定义方法
+                console.log('say');
+            }
+        }
+        var person1= new Person('zs',10);//方法直接继承
+        console.log(person1);
+        class Coder extends Person {
+            constructor(name,age,x){
+                super(name,age);//super()继承父类的属性
+                this.XX=x;
+            }
+        }
+        var coder1 = new Coder('zz',20,'111');
+        console.log(coder1)
+        
+    </script>
+
+</body>
+</html>

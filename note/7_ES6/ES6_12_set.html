@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //去掉字符串中重复的
+        let a = [1,2,3,3,4];
+        function aa(){
+            var obj = {};
+            var result = [];
+            for( let i =0; i<a.length; i++){
+                var key = a[i];
+                if(!(key in obj)){
+                    obj[key] = 1;
+                    result.push(key);
+                }
+            }
+            return result;
+        }
+        console.log(  aa(a) ); 
+    //Set类似于数组，但是成员的值都是唯一的，没有重复的值。函数接受数组或类数组作为参数。new Set();
+
+        let arr1 = [1,2,3,3,4];
+        let arr2 = new Set(arr1);//可用于数据去重
+        //类数组变数组
+        let result = [...arr2];
+        let result = Array.from(arr2);
+        
+        console.log(arr2);
+        //add(value)：添加某个值，返回Set结构本身。clear()：清除所有成员，没有返回值
+        //delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
+        let arr1 = [1,2,3,3,4];
+        let arr2 = new Set(arr1);
+
+        arr2.add(8);
+        arr2.delete(3);
+        //has(value)：返回一个布尔值，表示该值是否为Set的成员。
+        console.log( arr2.has(1) );
+        console.log(arr2);
+
+        //WeakSet:成员只能是对象，而不能是其他类型的值。add()增加值
+        var a = new WeakSet();
+        a.add({name:'zs'});
+        a.add({
+            age:30
+        })
+
+        console.log(a);
+
+
+    </script>
+</body>
+</html>

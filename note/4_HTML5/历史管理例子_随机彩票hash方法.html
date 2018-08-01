@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="content"></div>
+
+
+    <script>
+        var oContent = document.getElementById('content');
+        var oBtn= document.getElementById('btn');
+        var obj = {};
+        
+
+        oBtn.onclick=function(){
+            var arr = new Array();
+            for(var i = 0 ; i<7;i++){          
+                var ran = Math.floor(Math.random()*35)+1;
+                arr.push(ran);
+            }
+                oContent.innerHTML = arr ;    //以上为止是建立7个随机数字彩票
+                var num = Math.random();        
+                location.hash = num;            //让hash值是随机数
+                obj[num]=arr;                   
+                //让每个hash绑定彩票数组 绑定了很多组hash和彩票值
+                //每个循环 []里是变化的 就绑定了一组
+
+
+        }
+
+        window.onhashchange = function(){ // 点击历史按钮触发事件
+            if(obj[location.hash.substr(1)]){//刷新之后彩票值清空  
+                //判断是否是有效值 (非0数字 非空字符串 非undefined 非null)
+                oContent.innerHTML= obj[location.hash.substr(1)] //substr是去掉hash开头的# 
+                //取当前hash绑定的彩票组
+            }else{
+                oContent.innerHTML='';
+            }
+            
+        } 
+        
+    </script>
+</body>
+</html>

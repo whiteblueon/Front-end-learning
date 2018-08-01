@@ -1,0 +1,14 @@
+3D动画：
+    有个视角的概念 
+    子元素3D变换
+    需要给父元素加视角属性  
+    控制视角远近   设置在父元素 如 perspective(视角)：1000px  (就是从哪里看3D变换的元素 观众角度)
+        或给每个子元素设置transform： perspective(1000px )
+    控制眼睛位置  设置在父元素 视角原点 prespective-origin: x, y; 
+    如 prespective-origin: 50%, -800px; 从上玩往下看  默认 prespective-origin: 50%, 50%;
+    多层3D变换的话 要给中间的元素加 transform-style: preserve-3d;  3D变换子元素1里子元素2也3D变换就给子元素1加，
+        否则看不出子元素2的3D效果。
+
+    rotate3d(x,y,z)
+    translate(x,y,z)
+    元素旋转，轴也跟着旋转

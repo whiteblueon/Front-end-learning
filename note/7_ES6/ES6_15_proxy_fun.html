@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        let fn = function(a){
+            console.log('fn....')
+        }
+        //调用函数之前进行的操作
+        let pro = new Proxy(fn,{//第一个参数监测的函数 第二个参数是对象但是里面有apply方法
+            apply(fn,ctx,args){//调用函数时调用 apply  fn当前监测的函数 args是传给fn的参数
+                console.log('apply....调用');//apply....调用
+                console.log(arguments);//0:ƒ() 1:undefined 2:[1]
+                Reflect.apply(...arguments);//fn...  固定语法调用fn
+                //...arguments拆分了参数数组
+                //这里...arguments = fn,ctx,args
+            },
+        });
+        pro(1);
+            
+    
+    </script>
+</body>
+</html>

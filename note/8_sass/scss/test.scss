@@ -1,0 +1,13 @@
+$color:#fff;
+
+body{
+    background: $color;
+    color: $color;
+}
+$j:5;
+        @while($j<10){
+            .a#{$j}{
+                width:20*$j;
+            }
+            $j:$j+2;
+        }

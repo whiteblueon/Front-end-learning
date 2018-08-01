@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        JSON(JS对象标记//是一种轻量级的数据交换格式)的新方法：
+        var obj = {
+            a: 'Hello',
+            b: 'World'
+        }//js对象
+
+        var per = '{
+            "a": "Hello", 
+            "b": "World"
+        }' 
+// json  属性也用引号引上 后台传输的就是这样外面有单引号
+    字符串转换成JSON对象 
+        var oPerson = JSON.parse(per); console.log(oPerson.a);
+
+    /*对象转化字符串  JSON.stringify*/
+    var person2 = {
+        "name":"lisi",
+        "age":20,
+        "school":"农大",
+        "hobby":["sing","dance"]
+    };
+    var str = JSON.stringify(person2);
+    console.log(str);
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>

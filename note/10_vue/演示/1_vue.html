@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        asdujtfuydgfuyg
+        {{msg}} {{aa}}
+        <!-- 取msg和aa的值 -->
+        <!-- 我是msg aaa  -->
+    </div>
+    <div id="app2">
+        <h3>
+            {{test}} 
+        </h3>
+        {{test}}
+    </div>
+    {{test}}<!-- {{test}}  因为未在挂载的元素里--> 
+    
+
+    <script>
+        let vm1 = new Vue({
+            el:"#app",//代表挂载的元素
+            data:{//写的数据
+                msg:'我是msg',
+                aa:'aaa'
+            }
+        });
+
+        let vm2 = new Vue({
+            el:"#app2",
+            data:{
+                test:'abc'
+            }
+        });
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        div{
+            width: 1560px;
+            height: 800px;
+        }
+        #btn{
+            height:40px;
+            position: fixed;
+        }
+        #div1{
+            background: #ff6600;
+        }
+        #div2{
+            background: hsl(138, 80%, 41%);
+        }
+        #div3{
+            background: #06f;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div id="btn">
+        <a href="" aa='#div1' id="a1">div1</a>
+        <a href="" aa='#div2' id="a2">div2</a>
+        <a href="" aa='#div3'id="a3">div3</a>
+    </div>
+    
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+
+    <script>
+        $('a').on('click',function(){
+            var $ele = $($(this).attr('aa'));            
+            $('body,html').animate({
+                scrollTop:$ele.offset().top
+            },1000);
+            history.pushState($($(this).attr('aa')).offset().top,'');
+            return false;
+        })
+        window.onpopstate=function(e){
+            $('body,html').animate({
+                scrollTop:e.state
+            },1000);
+            return false;
+        }
+    </script>
+
+
+
+
+</body>
+</html>

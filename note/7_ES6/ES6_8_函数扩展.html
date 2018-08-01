@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+
+    <script>
+        function aa ([x,y]){
+            return x+y;
+        }    
+        console.log(aa([3,5]));//8
+        console.log(aa([3]));//NaN
+        function aa ([x,y=5]){//传个默认值 当没有参数传入时 使用默认值
+                                //传undefined时 使用默认值
+            return x+y;
+        }    
+        console.log(aa([3]));//8
+        //方法名.length : 默认值个数
+            console.log(aa.length)//1
+        //方法名.name: 返回函数名
+            console.log( aa.name )
+        
+        //箭头函数: 函数中的this是执行时的this  箭头函数里的this指向的是声明时的this
+            //箭头函数里的this到父作用域中去找。
+            let aa = function(){
+
+            }
+            let aa=() => {
+
+            }
+
+            var aLi =document.querySelectorAll('li');
+            
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onclick=function(){
+                    var _this = this;
+                    setTimeout(function(){
+                        console.log(_this);
+                    },200)
+                }
+            }
+
+            //使用箭头函数
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onclick=function(){
+                    setTimeout(()=>{
+                        console.log(this);//这里的this就变成事件绑定的li
+                    },200)
+                }
+            }
+
+            var person= {
+                name :'zs',
+                age:'20',
+                say:()=>{
+                    aa=()=>{
+                        console.log(this);//window
+                    }
+                    aa();
+                }
+
+            }
+            //箭头函数不能用于构造函数
+
+                Person = (name,age) =>{
+                    this.name =name;
+                    this.age = age;
+                }
+                var personl =new Person('zs',20);//报错:Person不是个构造函数
+                
+            //箭头函数中不允许使用arguments 用rest替代
+
+                let aa = () =>{
+                    console.log(arguments);//报错:arguments未定义
+                }
+                let aa = (...rest) =>{
+                    console.log(rest);//[1,2,3,4]
+                }
+                aa(1,2,3,4);
+        
+        
+    </script>
+</body>
+</html>

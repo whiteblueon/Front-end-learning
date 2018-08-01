@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        //字符串扩展方法
+        //模板字符串 ` ${变量} `  支持标签 换行 变量运算
+            var a=3;
+            var b=5;
+            console.log(a+'+'+b+'='+(a+b));//3+5=8
+            console.log(`${a}+${b}=${a+b}`);//3+5=8
+
+            var str = 'abcdef';
+            console.log(str.indexOf('b'));//1
+            //判断是否含有字符串 返回布尔值
+            console.log(str.includes('g'))//false
+            //判断是否是所给字符串开头
+            console.log(str.startsWith('bc'))//false
+
+            //封装startsWith函数
+            function sw(longStr,str){
+                if(longStr.indexOf(str)==0){
+                    return false;
+                }
+                return true;
+            }
+            //给string类即所有string对象封装的sw方法 
+            String.prototype.sw=function(str){
+                if(this.indexOf(str)==0){
+                    return true;
+                }
+                return false;
+            }
+            var strr = 'hello world';
+            console.log(str.sw('asf'));//false
+
+            //给string类即所有string对象封装的sw方法
+            String.prototype.ew=function(str){
+                if(this.lastIndexOf(str)+str.length==this.length){
+                    return true;
+                }
+                return false;
+            }
+            var str1='assdgdsfew';
+            console.log(str1.ew('faf'));
+            
+            //padStart()从开头添加第二个参数字符串到满足个数等于第一个参数
+            //padEnd()从后往前加
+            //复制字符串到5个
+            var str = 'abc';
+
+            console.log( str.padStart(8,'xyz') );//xyzxzabc
+            console.log( str.padEnd(8,'xyz') );//abcxyzxy
+
+            console.log( str.repeat(5) );//abcabcabcabcabc
+
+    
+    
+    </script>
+</body>
+</html>

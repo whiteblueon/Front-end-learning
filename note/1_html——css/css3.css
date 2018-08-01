@@ -1,0 +1,14 @@
+/* -webkit-
+-os-
+-moz-
+
+2D动画： */
+    #div{
+        height: 200px;
+        width: 200px;
+    }
+    transfrom: rotate(30deg);变形 顺时针旋转30度  -30为逆时针
+    transfrom-origin: 100px 0；变形原点 旋转原点为上沿中心 
+
+    过渡：transition
+        transition：transfrom 1s linear；一秒匀速变化

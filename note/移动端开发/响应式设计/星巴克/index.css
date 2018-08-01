@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.viewport-wrapper{
+
+}
+/* nav css样式开始 */
+#nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+    background: #fff;
+    width: 30%;
+}
+header{
+    padding: 24px;
+    height: 48px;
+    display: block;
+}
+.logo{
+    float: left;
+    margin-right: 12px;
+    width: 36px;  
+}
+.logo img{
+    width: 100%;
+}
+.primary{
+    float: left;
+    max-width: calc(100% - 72px);
+    overflow: hidden;
+    /* margin: 0; */
+}
+.primary li{
+    float: left;   
+}
+.primary a{
+    color: #000; 
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 10px 5px;
+    display: block;
+}
+.nav-menu{
+    float: right;
+    width: 24px;
+    padding: 6px 0;
+    display: block;
+}
+.nav-menu img{
+    width: 100%;
+}
+/* content开始 */
+.body{
+    text-align: center;
+    height: calc(100% - 98px);
+    display: table;
+    width: 100%;
+}
+#account-entry{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 24px 0 84px;
+}
+.display-1{
+    margin-bottom: 24px;
+    width: 100%;
+}
+.display-1{
+    height: 32px;
+}
+#account-entry span{
+    
+    font-weight: 700;
+    font-size: 26px;
+    float: left;
+    
+}
+#footer{
+    width: 100%;
+}
+#footer img{
+    float: left;
+    margin-top: -3px;
+    margin-right: 4px;
+}
+
+#footer span{
+    font-size: 16px;
+    color: #00A862;
+    font-weight: 400;
+}
+.btn span{
+    border: 1px solid #00A862;
+    border-radius: 48px;
+    padding: 4px 12px;
+    margin-left: 30px;
+    margin-top: -3px;
+}
+
+

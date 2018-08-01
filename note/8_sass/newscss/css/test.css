@@ -1,0 +1,27 @@
+body {
+  background: #fff;
+  color: #fff;
+  width: 50px; }
+
+.header {
+  width: 1210px;
+  margin: 0 auto; }
+  .header .logo {
+    width: 100px;
+    height: 100px;
+    float: left; }
+  .header a {
+    text-decoration: none; }
+    .header a:hover {
+      color: #ff0; }
+
+.a5 {
+  width: 100; }
+
+.a7 {
+  width: 140; }
+
+.a9 {
+  width: 180; }
+
+/*# sourceMappingURL=test.css.map */

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //const: 基本数据类型不能修改
+            //引用数据类型 指向的地址不能修改
+            //如果不修改对象 console.log(obj) 冻结
+        const a = 10;//const 常量
+        a=5;//报错 不能修改
+
+        const obj={
+            name = 'zs',
+            age='10'
+        }
+        
+        //(1)
+        obj.name = 'lisi';//堆内存内容改了
+        console.log(obj);//不报错
+        
+        //(2)
+        obj = {
+            name:'fsaf'//报错 因为指向的地址也改了
+        }
+        
+        //(3)
+        Object.freeze(obj); //冻结了
+        obj.name = 'lisi';
+        console.log(obj);//还是原对象
+        
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+        //类数组转换为数组 Array.from()  ...  
+            var aLi =document.querySelectorAll('li');
+            console.log(aLi);
+        //将一组值转换为数组 Array.of()
+        var arr = new Array(4);
+        console.log(arr);//长度为4的空数组
+
+        var arr1 = Array.of(4);
+        console.log(arr1); //长度为1 值为4的数组
+
+        //arr.copyWithin(2,3,6) 以第二个参数到第三个参数的索引之间的值替换第一个参数位置的值
+        var arr = [ 1, 2, 3, 4, 5 ,6 , 7];
+        console.log(  arr.copyWithin(2,3,6) ); // [1, 2, 4, 5, 6, 6, 7] 
+
+       
+        //find找到第一个符合条件的成员
+        var result = arr.find(function(val, index, arr){
+            return val > 4;//找到索引大于4的
+        })
+        var result = arr.findIndex(function(val, index, arr){
+            return val > 4;//找到值大于4的
+        })
+        console.log(result);
+        //用第一个参数替换第二个参数到第三个参数不包括第三个参数之间
+        var arr = [1,2,3,4,5,6,7];
+
+        console.log( arr.fill('xx',2,5) );//(7) [1, 2, "xx", "xx", "xx", 6, 7]
+
+        //不写后两个参数就默认都替换
+        var arr = (new Array(5)).fill('a');
+
+        console.log(arr); //(5) ["a", "a", "a", "a", "a"]
+
+        //for …of循环
+        var arr1 = ['a','b','c','d','e','f'];
+
+        for( a of arr1){
+           console.log(a);//a b c d e f
+        }
+        //entries()，keys()用于遍历数组
+        for( a of arr1.keys()){
+           console.log(a);//0 1 2 3 4 5
+        } 
+
+        for( [index,val] of arr1.entries()){
+           console.log(index,val);  //0 "a"
+                                    //1 "b"
+                                    //2 "c"
+                                    //3 "d"
+                                    //4 "e"
+                                    //5 "f"
+        } 
+
+        //forEach(val,key,arr):没有返回值
+         arr1.forEach(function(val,index,arr){
+            console.log(val,index); //a 0
+                                    //b 1
+                                    //c 2
+                                    //d 3
+                                    //e 4
+                                    //f 5
+        }) 
+        //筛选
+       var result = arr1.filter(function(val,index,arr){
+            return index >3;
+        })
+
+        console.log(result);//(2) ["e", "f"]
+
+
+    </script>
+</body>
+</html>

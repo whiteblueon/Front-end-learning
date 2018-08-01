@@ -1,0 +1,29 @@
+$color:#fff;
+
+body{
+    background: $color;
+    color: $color;
+    width: 50px;
+}
+.header{
+    width:1210px;
+    margin: 0 auto;
+    .logo{
+        width:100px;
+        height:100px;
+        float: left;
+    }
+    a{
+        text-decoration:none;
+        &:hover{
+            color:#ff0;
+        }
+    }
+}
+$j:5;
+        @while($j<10){
+            .a#{$j}{
+                width:20*$j;
+            }
+            $j:$j+2;
+        }

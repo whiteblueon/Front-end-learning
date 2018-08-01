@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //解构
+        //(1)
+        let arr = [1,2,3];
+        let[a,b,c]=arr;
+        //直白来看就是let [a,b,c]=[1,2,3]   
+        
+        console.log(a,b,c)// 1,2,3
+        
+        //(2)
+        let[a,b,[c,d],f] = [1,2,[3,4],5];
+        console.log(a,b,c,d,f)//1,2,3,4,5
+
+        //(3)
+
+        let obj = {
+            name:'zs',
+            age:20
+        }
+
+        let {name:aa,age:bb}=obj;
+        console.log(aa,bb);//zs 20
+        //或
+        let {name,age}=obj;
+        console.log(name,age);//zs 20
+
+        //(4)
+        function cc({name,age}){
+            console.log(name,age);
+        }
+        var person = {
+            name:'zs',
+            age:18
+        }
+        cc(person);
+
+        //(5)
+        let a = 5;
+        let b = 6;
+
+        /*  let a = 5;
+        let b = 6; */
+
+
+      /*   let c = a;
+        a  = b;
+        b = c;
+
+        a = a+b;
+        b = a-b;
+        a = a-b;
+
+        a = [a,b];
+        b = a[0];
+        a = a[1]; */
+
+        [b,a] = [a,b];
+    
+        
+
+        // b = [a, a=b][0];
+        console.log(a,b)
+
+        //(6)字符串解构
+            let str = 'abcdef' ;
+            let [a,b,c,d] = str ;
+            str.charAt(0);
+            str[0];
+            console.log(a,b,c,d);
+
+
+        //(7)
+        var str = '{"name":"zhangsan","age":"20"}';       
+        var {name:aa,age:bb} = JSON.parse(str);//转换为json对象
+        console.log(aa,bb)//zhangsan 20
+
+
+
+
+        
+        
+    </script>
+</body>
+</html>

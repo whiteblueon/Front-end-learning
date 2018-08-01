@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            border: 1px solid #000;
+            width: 25%;
+            box-sizing: border-box;
+            /* 变成怪异盒模型 否则加上边框会超出25% */
+        }
+        #container{
+            font-size: 0;
+        }
+        #big-img{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #000 url('img/1.jpg') center center no-repeat;
+            background-size: contain;
+            /* 让照片完全显示在背景里 */
+            
+        }
+        .dis{
+            display: none
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="thumbs/1.jpg" aa='1' alt="">
+        <img src="thumbs/2.jpg" aa='2' alt="">
+        <img src="thumbs/3.jpg" aa='3' alt="">
+        <img src="thumbs/4.jpg" aa='4' alt="">
+        <img src="thumbs/5.jpg" aa='5' alt="">
+        <img src="thumbs/6.jpg" aa='6' alt="">
+        <img src="thumbs/7.jpg" aa='7' alt="">
+        <img src="thumbs/8.jpg" aa='8' alt="">
+        <img src="thumbs/9.jpg" aa='9' alt="">
+        <img src="thumbs/10.jpg" aa='10' alt="">
+        <img src="thumbs/11.jpg" aa='11' alt="">
+        <img src="thumbs/12.jpg" aa='12' alt="">
+        <img src="thumbs/13.jpg" aa='13' alt="">
+        <img src="thumbs/14.jpg" aa='14' alt="">
+        <img src="thumbs/15.jpg" aa='15' alt="">
+        <img src="thumbs/16.jpg" aa='16' alt="">
+        <img src="thumbs/17.jpg" aa='17' alt="">
+        <img src="thumbs/18.jpg" aa='18' alt="">
+        <img src="thumbs/19.jpg" aa='19' alt="">
+        <img src="thumbs/20.jpg" aa='20' alt="">
+        <img src="thumbs/21.jpg" aa='21' alt="">
+        <img src="thumbs/22.jpg" aa='22' alt="">
+        <img src="thumbs/23.jpg" aa='23' alt="">
+        <img src="thumbs/24.jpg" aa='24' alt="">
+    </div>
+    <div id="big-img" class="dis"></div>
+
+
+    <script>
+        // var aImg=document.getElementsByTagName('img');
+        // for(var i = 0 ; i<24;i++){
+        //     aImg[i].on
+        // }
+        var idx;
+        $('img').on('touchstart',function(){
+            $('#big-img').removeClass('dis');
+            idx = $(this).attr('aa')
+            $('#big-img').css('background',' #000 url(img/'+idx+'.jpg) center center no-repeat')
+            console.log(idx)
+        })
+        $('#big-img').on('touchstart',function(){
+            $('#big-img').addClass('dis')
+        })
+        $('#big-img').on("swipeleft",function(){
+            idx++;
+            if(idx==25){
+                idx=1
+            }
+            $('#big-img').css('background',' #000 url(img/'+idx+'.jpg) center center no-repeat')
+            
+        })
+        $('#big-img').on("swiperight",function(){
+            
+            idx--;
+            if(idx==0){
+                idx=24
+            }
+            $('#big-img').css('background',' #000 url(img/'+idx+'.jpg) center center no-repeat')
+        })
+
+    </script>
+</body>
+</html>

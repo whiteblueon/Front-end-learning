@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //历史管理：
+        history.pushState() //第一个参数存入值  ，第二个是标题(都没实现 必须得写 可写成''即空)， 
+        //第三个参数地址(可选)
+        window.onpopstate=function(e){ //点击历史按钮触发事件
+            console.log(e.state)    //取出存入的历史记录
+        }  
+
+        //离线应用 (了解)
+
+        //本地存储 
+            var date =new Date();
+            date.setDate(12);
+            document.cookie = 'name=zhangsan; expires='+date;//expires 设置过期时间
+            
+            function setCookie(key,value,day){//封装setCookie函数
+                var str=key+'='+ value+';';  
+                if(day){
+                    var date= new Date();
+                    date.setDate(date.getDate()+day);//设置过期时间
+                    str += 'expires=' + date;  
+
+                }
+                document.cookie= str;
+
+            }
+            setCookie('xxx', '666',7)//调用函数
+
+            function getCookie(key){封装getCookie函数
+                //假如已有cookie： "xxx=lisi"; "bbb=aaa"; "name=zhangshan" 
+                //！！！一定要注意; 后面有空格
+                var arr =document.cookie.split('; ');//如["xxx=lisi", "bbb=aaa", "name=zhangshan"]
+                //运用split分隔时注意分号后的空格  防止下面判断时错误
+                for(var i = 0;i<arr.length;i++){
+                    var arr2= arr[i].split('=');
+                    if(key==arr2[0]){
+                        return arr2[1]
+                    }
+                }
+            }
+            console.log(getCookie('name'));
+
+            function removeCookie(){
+                setCookie(key,'',-1)
+            } 
+
+
+            //session域 浏览器关闭
+            sessionStorage.name='lisi';
+            // localStorage 一直存在 除非用户手动清除
+            localStorage.age='30'
+
+            sessionStorage.setItem('aa','bb');//sessionStorage也有以下方法
+            localStorage.setItem('cc','dd');
+            localStorage.removeItem('cc');
+            localStorage.clear();//清除所有
+            localStorage.getItem('cc')
+
+            //1、存储大小 cookie 4k  localStorage sessionStorage 至少5M
+            //2、生命周期 cookie 手动设置过期时间
+            //          localStorage 一直存在 除非手动清除
+            //          sessionStorage 浏览器关闭
+            //3、cookie 所有同源的(相同域名等)http请求中携带 发送到后台
+
+
+
+    </script>
+
+</body>
+</html>

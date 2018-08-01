@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div  id="app">
+        <button @click="change()">click</button>
+        <ul>
+            <li v-for="val in list">{{val}}</li>
+        </ul>
+        <h2 v-for="(val,key) in obj">{{key}}/{{val}}</h2>
+    </div>
+    
+
+
+    <script src="../vue.js"></script>
+    <script>
+    
+        let vm = new Vue({
+            el:"#app",
+            data:{
+                list:[1,2,3,4,5],
+                obj:{
+                    name:"zs"
+                }
+            },
+            methods:{
+                change(){
+                    // this.list[1] = 8;//会给list改值 但不会显示 算数组通过索引值修改值不可以
+                        //即在vue中通过[]改变值不好使
+                    // this.list.splice(1,1,8);//修改2为8;
+                    // Vue.set(this.list,1,8);//修改this.list里的索引为1的值为8
+                    // this.obj.name = "lisi";//name:lisi vue里可以修改
+                    // this.obj.age = 20;//会给obj加age属性 但不会显示 算vue里对象添加属性不好使
+                    // Vue.set(this.obj,'age',30); //给obj添加name属性值为30
+                    console.log(this.obj)
+                    // 对象添加属性不可以 修改可以
+                    // 数组通过索引值修改值不可以
+
+                    
+
+                }
+            }
+        })
+    
+    
+    </script>
+</body>
+</html>

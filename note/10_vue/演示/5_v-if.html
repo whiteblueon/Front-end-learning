@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2 v-if="msg=='a'">aaaaaa</h2>
+        <!-- 判断如果msg=a 就显示 不显示是dom里去掉该元素-->
+        <h2 v-else-if="msg=='b'">bbbbbb</h2>
+        <!-- 如果是b就显示 -->
+        <h2 v-else="msg=='c'">cccccc</h2>
+        <!-- 最后如果是c就显示 -->
+        <!-- <h2 v-else>cccccc</h2>   都没有就显示 -->
+        <h2 v-show="msa=='a'">showshow</h2> 
+        <!-- 这里的显不显示是控制display：none或block -->
+
+    </div>
+
+    <script>
+    
+        var vm =new Vue({
+            el:"#app",
+            data:{
+                msg:"a"
+            },
+            methods:{
+
+            }
+        })
+    
+    </script>
+</body>
+</html>

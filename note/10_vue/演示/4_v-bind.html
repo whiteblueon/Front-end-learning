@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <style>
+        .aa{
+            background: #f00;
+        }
+        .bb{
+            background: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2 v-bind:id='msg'></h2>
+        <!-- 代表id的值用下面的msg的值 --> <!-- v-bind:id可简写为:id -->
+        <p :class="{aa:true,bb:false}" ></p>
+        <!-- true代表使用这个类 false代表不使用这个类 -->
+        <!-- 有aa类 没有bb类 -->
+        <p :class="{aa:isA,bb:isB}" @click='change()'>{{aa}}</p>
+        <!-- 与上相同  但是可以用js控制class值-->
+        
+    </div>
+
+    <script>
+    
+        var vm =new Vue({
+            el:"#app",
+            data:{
+                msg:"aaa",
+                isA:true,
+                isB:false,
+                aa:'刘宇阳',
+            },
+            methods:{
+                change(){
+                    if(!this.isA){
+                        this.isA=!this.isA;
+                        this.isB=!this.isB;
+                        this.aa='刘宇阳'
+                    }else{
+                        this.isA=!this.isA;
+                        this.isB=!this.isB;
+                        this.aa='666'
+                    }
+                    
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

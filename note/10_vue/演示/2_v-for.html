@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <ul>
+            <li v-for="val in arr">{{val}}</li><!-- 显示5个li 里面分别是1~5 -->
+            <!-- v-for 循环 -->
+            
+        </ul>
+
+        <h2 v-for="(val,key) in obj">{{key}} : {{val}}</h2>
+        <!-- name:'zs'  age:20  school:'weichuang' --> 
+        <div v-text="msg"></div>
+        <!-- 避免加载里面数据时{}闪一下 -->
+        <div v-html="msg"></div>
+        <button v-on:click="show(2)">刘宇阳</button>
+        <!--v-on可简写成 @ -->
+        <div>{{num}}</div>
+
+    </div>
+    
+
+
+    <script>
+        
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                arr : [1,2,3,4,5],
+                obj:{
+                    name:'zs',
+                    age:20,
+                    school:'weichuang'
+                },
+                msg:"aaa",
+                num:0
+            },
+            methods:{
+                show(x){
+                    console.log(event);
+                    this.num+=x;
+                }
+            }
+        });
+    
+    </script>
+</body>
+</html>

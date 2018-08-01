@@ -1,0 +1,184 @@
+二  CSS 指层叠样式表
+像素：px（相对的大小 不同设备像素大小不一样）
+
+注释：<!--   -->
+
+快捷键：div{div$}*4
+
+内联样式（在 HTML 元素内部）<div style=" "><div/> 内联样式（在 HTML 元素内部）拥有最高的优先权    
+    缺点：代码重用性差， css html文件不分开。
+
+内部样式表（位于 <head> 标签内部）
+
+外部样式表
+
+css选择器：
+1 ID选择器： id是唯一的  id比class效率高一些 #id{}  快捷键：p#p1
+2 标签选择器： p{}  div{} a{}
+3 class选择器： 可以重复的 .class{}   快捷键：p.p1
+4 分组选择器： #p1，#p3{}
+5 后代选择器： #div2 div{}  子孙后代都被选中
+6 子代选择器： #div2>div{}   亲子代被选中 IE6有兼容性问题
+7 多类选择器： div.aa.bb{}   是div、还得满足class有aa bb
+8 伪类选择器： #div .li6:hover .sub-nav{} (这个例子的sub-nav应为li6的子元素)
+9 兄弟选择器:  div~p 选中后面所有的p div+p 选中后面紧挨着的p
+10 属性选择器：#search input[type="password"]{}
+11 伪元素选择器 div:after{content:""}默认插入行级元素
+
+
+
+权重值：
+id：100
+class：10
+标签选择器（tag）：1
+伪类选择器：1
+！important > 内联 > id > class > tag
+比大小的时候先比权重值最大的选择器 一样大的话再比第二大的 没有顺序
+
+
+*****css盒模型
+    w3c标准盒模型
+        宽度=内容的宽度
+        高度=内容的高度
+        padding:5px 4px 3px 2px; （里面的像素按顺时针来： 上 右 下 左）
+        border-style：solid 实心
+        background: url(2.jpg) no-repeat right bottom; 图片位于右下角
+        边框变透明 boder-color:transparent
+
+    怪异模式(混杂模式) 盒模型：
+        宽度与高度=内容+padding+border
+
+    box-sizing：border-box；标准转化为怪异 box-sizing：content-box;转为标准  box-sizing 有兼容性问题
+
+
+行级与块级元素： 
+    行级元素inline： 和行级元素在一行 span a  元素之间有空
+                    不能设置宽高。宽高是元素内容撑开的。行级元素之间的小空白是有空格换行造成的。
+                    行级元素浮动脱离文档流之后可以设置宽高。  padding能用  margin只能加左右 
+                    不能加上下。
+    块级元素block：  自己在一行 div p h1~h6 ul ol li  
+                    可以设置宽高。而不设置宽高，宽是充满父元素的，高是内容撑开的。
+    行块级元素inline-block：	在一行还能设置宽高 img input textarea 元素之间有空
+
+    display：inline；块级变行级元素。
+    display：block； 行级变块级元素。
+    display：inline-block；  既有行级元素特点，又有块级元素特点。 ----兼容性：IE8及以下不兼容
+
+    resize：让textarea不能随便改变大小
+
+
+浮动 float：
+    浮动元素脱离文档流 
+    浮动元素上不去一般是父元素宽度不够
+
+css reset(样式重置)
+    百度搜索normalize
+
+定位：position
+    默认值static(静态的)
+    相对定位：relative
+        相对于自己的初始位置，不脱离文档流。
+    绝对定位：absolute
+        相对与最近已定位的祖先元素，脱离文档流。
+    固定定位：fixed IE6不支持
+        相对于窗口，脱离文档流。
+    粘性定位：sticky(粘性的)
+        粘性定位是相对定位和固定定位的混合。元素在跨越特定阈值前为相对定位，之后为固定定位。
+        须指定 top, right, bottom 或 left 四个阈值其中之一，
+        才可使粘性定位生效。否则其行为与相对定位相同。有兼容性
+
+定位与浮动的区别：浮动了后面的内容会环绕浮动元素  定位内容会覆盖
+
+绝对定位和浮动div没设置宽度 变化前宽度是父元素宽度 变化后是内容撑开
+
+
+居中： 
+    文本居中：
+        水平居中：text-align: center;
+        垂直居中：设置行高，行高等于父元素高度。
+    多行文字居中
+        父元素设置display：table； 子元素设置display：table-cell； vertical-align:middle;
+    元素居中：
+        块元素在块元素居中:
+            水平居中：margin：0 auto(块元素有宽度才会居中)；position:absolute  left 50%  margin-left自己宽度
+                的一半(宽高不知道 css3:变形：位移 transfrom: translate(-50%,-50%);)
+                transfrom: translateX(-50%);
+            垂直居中：position:absolute  top 50%  margin-top自己高度的一半
+            利用弹性盒模型
+
+外边距合并：
+    兄弟元素都设置外边距  选最大的那个为间距 
+        1 给其中一个写大点(想要的边距) 2 给两个外面分别套div 然后bfc
+    父子元素 子元素设置上外边距 父元素跟着掉下来
+        给父元素bfc
+
+
+
+
+BFC(block formatting context 块级格式化上下文)
+    只要元素满足下面任一条件即可触发 BFC 特性：
+        body 根元素
+        浮动元素：float 除 none 以外的值
+        绝对定位元素：position (absolute、fixed)
+        display 为 inline-block、table-cells、flex
+        overflow 除了 visible 以外的值 (hidden、auto、scroll)
+
+
+
+透明度：opacity:0.5;(透明度0~1)
+        /* filter：alpha */注释：IE8 以及更早的版本支持替代的 filter 属性。
+        例如：filter:Alpha(opacity=50)。
+        opacity属性的值，可以被其子元素继承 而rgba不会被继承
+
+overflow: scroll; 让内容在范围内滚动
+
+让内容充满全部 绝对定位并上下左右为0
+    
+css sprite 雪碧图
+    .div{
+        width: 57px;
+        height: 57px;
+        background: url(img/sprite.png) no-repeat -111px -222px;
+    }
+    background-attachment:fixed;背景图片不随着多余部分滚动
+
+
+标签页选项卡上图标：在页面源文件的<head></head>标签之
+    间插入<link rel="shortcut icon" href=" /favicon.ico" /> 
+
+
+<img>6666   666与图片一行但在下面 img{ vertical-align:top}666回到上面
+
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}解决元素塌陷问题
+
+文字过多省略号
+    一行：.div{white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;    //多余变省略号
+        }文本变单行 溢出隐藏 多余的变省略号
+
+    两行： .div{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp:2;
+                overflow: hidden;
+                text-overflow: ellipsis;
+    }只支持-webkit内核浏览器
+
+    文本框 <textarea> 让大小固定  resize：none；
+
+
+    height:56vw; 高度占(视口)窗口宽度的56%  vw(视口)窗口宽度的百分比
+        vh(视口)窗口高度的百分比
+    padding-top: 30%; 父元素宽度的30%     padding-top:num% 父元素宽度的百分比
+        可用以上两种方法做响应式正方形 
+        当margin/padding取形式为百分比的值时，无论是left/right，还是top/bottom，都是以父元素的width为参照物的！
+    em 相对于父元素的 height:2em; 是父元素高的2倍
+    rem 相对于根元素 (html) 如em 只不过是相对于html  需要引用rem.js
+        原理是屏幕越小 html字体越小 根据html字体倍数来变化元素大小
+
+    

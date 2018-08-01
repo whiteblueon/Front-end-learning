@@ -1,0 +1,7 @@
+css：
+    让元素消失：1 display:none; 2 opacity: 0;(透明度为0) 3 visibility: hidden;(可视隐藏)
+    元素塌陷： 1高度写死 2 父元素跟着浮动或者定位 3 设个clearfix类 4 overflowhidden
+
+
+js：
+    对象自定义属性

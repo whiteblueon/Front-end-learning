@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../jquery/jquery-1.12.4.js"></script>
+    
+    <script>
+        //Promise 是异步编程的一种解决方案
+         $.get('a.json',function(data){//向a请求
+            if(data.status == 1){
+                $.get('b.json',function(data){//满足成功就向b请求
+                    //ghjkl;
+                })
+            }else{
+            }
+        }) 
+        var p1 = new Promise(function(resolve,reject){
+            $.get('a.json',function(data){//从a获取请求
+                if(data.status == 1){
+                    resolve();
+                }else{
+                    reject();
+                }
+            })
+        }).then(function(){//成功了就进入.then 即resolve()
+            //还可以再发请求  如向b发请求
+            console.log('okok');
+        }).catch(function(){//失败了就进入.catch 即reject()
+            console.log('nonono');
+        }); 
+
+        //3个请求
+        let p1 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p1 ok');
+                resolve();//成功时返回的函数
+            },1000);
+        });
+        let p2 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p2 ok');
+                reject();//失败时返回的函数
+            },1500);
+        }); 
+        let p3 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                console.log('p3 ok');
+                // resolve();
+                reject();
+            },800);
+        });  
+
+
+        Promise.all([p1,p2,p3]).then(function(){//all 请求都结束执行
+            console.log('1111'); //成功执行
+        },function(){
+            console.log('0000');//失败执行
+        });   
+
+        Promise.race([p1,p2,p3]).then(function(){//race 谁先结束执行谁
+            console.log('1111'); 
+        },function(){
+            console.log('0000');
+        });    
+
+
+        
+
+
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    </script>
+</body>
+</html>

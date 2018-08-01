@@ -1,0 +1,62 @@
+html5shiv.js 解决IE6/7/8 不支持html5新标签
+
+语义化标签：
+    根据内容的结构化(内容语义化)，选择合适的标签(代码语义化) 目的是1、便于开发者阅读和
+        2、搜索引擎的优化 如<header></header>
+        <article>	定义文章。
+        <aside>	定义页面内容之外的内容。菜单栏 
+        <datalist>	定义下拉列表。
+        <details>	定义元素的细节。
+        <dialog>	定义对话框或窗口。
+        <nav></nav> 导航
+        <section></section> 标签定义文档中的节（section、区段）。比如章节、页眉、页脚或文档中的其他部分。
+
+
+新增表单控件和表单属性：
+    新的输入类型：
+
+        email
+            <input type="email" required> //required要求内容不能为空 以下类型都可以添加
+        url
+            <input type="url"> //输入网址
+        number
+            <input type="number" max="10" min="1" step="2"> 最大值 最小值 每次增加几
+        range 范围
+            <input type="range">
+        Date pickers (date, month, week, time, datetime, datetime-local)
+            <input type="date">
+            <input type="time">
+        search
+            <input type="search">
+        color
+            <input type="color">
+        新的 input 属性：
+        autocomplete="on" 自动完成  以前输入过的name值会提示如用户名
+            <label>用户名 <input type="text" name="username" autocomplete="off" autofocus placeholder="请输入用户名"></label>
+        autofocus 自动获取焦点  进入页面直接获取焦点
+        pattern 属性  pattern 属性规定用于验证 input 域的模式（pattern）。
+        list 属性 list 属性规定输入域的 datalist。datalist 是输入域的选项列表。
+            注释：list 属性适用于以下类型的 <input> 标签：text, search, url, telephone,
+            email, date pickers, number, range 以及 color。
+
+
+音频与视频
+        视频：<video></video>当前，video 元素支持三种视频格式：
+            Ogg = 带有 Theora 视频编码和 Vorbis 音频编码的 Ogg 文件
+
+            MPEG4 = 带有 H.264 视频编码和 AAC 音频编码的 MPEG 4 文件
+            
+            WebM = 带有 VP8 视频编码和 Vorbis 音频编码的 WebM 文件
+
+        音频：<audio></audio>
+            Ogg  MP3 Wav
+                
+        属性：
+            autoplay	音频在就绪后马上播放。
+            controls	向用户显示控件，比如播放按钮。
+            loop	循环播放
+            preload	 如果出现该属性，则音频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
+            src：	url	要播放的音频的 URL。
+
+
+

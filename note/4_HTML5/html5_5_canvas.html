@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #000000;
+        }
+        #canvas1{
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="400" height="500">
+    </canvas>
+
+    <script>
+        //画表软件网站echarts
+        var oCanvas = document.getElementById('canvas1');
+        /*返回一个用于在画布上绘图的环境。*/
+        var oCtx = oCanvas.getContext('2d');
+     /*   oCtx.moveTo(20,20);  //定位笔的位置
+        oCtx.lineTo(80,80);     //划线到(80,80)
+        oCtx.strokeStyle = "#f00";  //给线选上色的颜色
+        oCtx.stroke();*/  //给线上色
+
+ 
+       /* oCtx.beginPath();  //从新开始画笔  否则都会变成下面的#000
+        oCtx.moveTo(80,80);     
+        oCtx.lineTo(10,80);
+
+        oCtx.lineTo(50,100);
+//        oCtx.closePath();  //不加的话会回到起点
+
+        oCtx.strokeStyle = "#000";
+        oCtx.stroke();*/
+
+
+
+        oCtx.arc(200,250,100,0,Math.PI,true); //画弧 前两个参数是圆心位置x,y  第三个参数：半径
+        //之后是起始弧度 结束弧度  true是逆时针 false是顺时针
+        oCtx.strokeStyle = 'pink';
+        oCtx.stroke();
+        /*度数 =>  弧度    度数*Math.PI/180      */
+
+        oCtx.beginPath();
+        oCtx.arc(200,250,100,0,30*Math.PI/180,false);
+        oCtx.strokeStyle = 'red';
+        oCtx.stroke();
+
+        oCtx.beginPath();
+        oCtx.rect(0,0,100,100); //画矩阵
+//        oCtx.stroke();
+        oCtx.fill(); //填充颜色
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

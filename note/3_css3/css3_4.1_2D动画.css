@@ -1,0 +1,74 @@
+动画:(css3动画效率更高[开启了GPU加速])
+
+2D动画：
+    transform 变形：
+    transform 有多个值用空格分开
+        旋转 rotate()
+            (角度) +为顺时针 -为逆时针 transform-origin默认值为元素中心(第一个值水平 第二个值垂直)
+            eg逆时针旋转45度 旋转中心为元素左上的点: transform:rotate(-45deg); transform-origin:0 0;
+            transform-origin：50% 50%; 这里的百分比是相当于元素自己的
+
+        缩放 scale(x,y)
+            (倍数) 相对于元素原先的倍数 scaleX() 水平。scaleY() 垂直。  (是负值)时、不光缩放还旋转180°
+            eg:transform:scaleX(0.5); transform:scaleY(2); 不能这么写,
+                后面会把前面覆盖掉,可以写成:transform:scale(0.5,2)
+
+        位移 translate(x,y)/* 类似相对定位，不脱离文档流 */     
+            (水平移动，垂直移动) 可以是百分比(相对于元素自己) 
+            情况类似与scale 也是translateX() 水平。translateY() 垂直。或translate(x,y)
+            transform:translate(100px,-100px)  /* 水平向右移100px 垂直向上移100px */
+
+        切变/扭曲 skew()
+
+        矩阵变形 matrix()
+
+
+
+    transition 过渡：
+        transition: 过渡的属性 时间 过渡的效果 延迟时间; transition要写在要过渡的元素的css里.
+        属性变化了就会触发过渡 ，无论是css变化的还是js变化的 
+        多个属性过渡 1、transition:width 2s linear , background 2s linear;
+            2、 transition ： all 2s linear;
+        不是所有属性变化都会过渡 如字体类型，浮动等
+        分开写: transition-property: all; 过度的属性:全部
+            transition-duration:2s; 过渡持续时间: 2s
+            transition-timing-function: linear; 过渡类型: linear           
+            transition-delay:2s; 过渡延迟时间: 2s
+        
+    
+    animation 动画:
+        元素css里写 animation：关键帧名字 时间 效果 forwards(动画执行完之后不回到原先属性) 延迟时间 执行次数；
+        执行次数值为 infinite 动画执行无数次 但只有第一次有延迟
+        animation-direction：reverse 动画反向运动 即从100%向0%运动
+        animation-play-state: paused 动画暂停运行
+        animation-fill-mode:  none默认开始状态 forwards动画停在终止状态 
+        定义关键帧: @-webkit-keyframes 关键帧名字 {分几份(分的是时间)}
+        @-webkit-keyframes xx{
+            0%{
+
+            }
+            50%{
+
+            }
+            100%{
+
+            }
+
+        }....[兼容性问题写5个] 相当于
+        @-webkit-keyframes xx{
+            from{
+
+            }
+            50%{
+
+            }
+            to{
+
+            }
+
+        }....[兼容性问题写5个] from就是0% to就是100%
+
+        backface-visibility: hidden; 隐藏被旋转的 div 元素的背面 如立方体后面的看不见了
+
+        一般用animate.css库 
+

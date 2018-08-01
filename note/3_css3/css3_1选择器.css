@@ -1,0 +1,49 @@
+/* Css3: */
+    /* 有兼容性 不支持ie6、7、8 */
+        -webkit-xxx Chrome/Safari
+        -moz-xxx 火狐
+        -ms-xxx IE
+        -o-xxx 欧朋
+        xxx 标准
+
+    选择器:
+        元素选择符：
+            1、* 2、标签选择器 3、id 4、class
+        关系选择符
+            1、后代选择器 2、子代选择器： #div2>div{}   亲子代被选中 IE6有兼容性问题 
+            3、兄弟选择器:  div~p 选中后面所有的p div+p 选中后面紧挨着的p
+        属性选择符：
+        //伪对象与伪类的区别：相当于存在一个假对象和加了一个假的class
+        伪类选择符：//例子用的jQuery
+            a:hover 必须位于 a:link 和 a:visited 之后，a:active 必须位于 a:hover 之后
+            E:focus
+            E:not(s) ()里是选择器
+            E:first-child    //选择所有父级元素下的第一个子元素
+                $('#ul1 li:first-child').css('background','green');//选中第一个li 注意是给li加:first-child
+            E:first-of-type  //父元素中第一次出现的元素。
+            E:last-child     //同上
+            E:last-of-type   //同上
+            E:nth-child()    //索引值，从1开始，也可以是字符串 even 或 odd，或一个方程式，例如:nth-child(4n) 
+                //even相当于2n 找规律一般用:nth-child()
+            E:nth-last-child()   //同上 从后往前来
+            E:nth-of-type()  //选择同属于一个父元素之下，并且标签名相同的子元素中的第n个
+                $("p:nth-of-type(2)")//选择的是p中的第二个p  
+            E:nth-last-of-type() 
+            E:only-child     //如果某个元素是其父元素的唯一子元素，那么它就会被选中(戏称:独生子女选择器)
+                $("div button:only-child")//选中div下只有一个元素且为button的div
+            E:only-of-type   //如果父元素有相同的元素名称的其他子元素，那么没有元素会被匹配。
+                $("button:only-of-type") //选中子元素中有别的元素，但只有一个button的父元素
+            E:empty 匹配没有任何子元素（包括text节点）的元素E。
+            E:checked 匹配用户界面上处于选中状态的元素E。(用于input type为radio与checkbox时)  
+            E:enabled 匹配用户界面上处于可用状态的元素E。
+            E:disabled 匹配用户界面上处于禁用状态的元素E。  
+            E:target 匹配相关URL指向的E元素。
+                解释：URL后面跟锚点#，指向文档内某个具体的元素。这个被链接的元素就是目标元素(target element)，:target选择器用于选取当前活动的目标元素。    
+        伪对象选择符：
+            E:first-line/E::first-line 选中的第一行
+            E:first-letter/E::first-letter 选中第一个字符
+            E:before/E::before 
+            E:after/E::after
+            E::placeholder 
+            E::selection 设置对象被选择时的样式。
+

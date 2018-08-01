@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="content"></div>
+
+
+    <script>
+        var oContent = document.getElementById('content');
+        var oBtn= document.getElementById('btn');
+        var obj = {};
+        
+
+        oBtn.onclick=function(){
+            var arr = new Array();
+            for(var i = 0 ; i<7;i++){          
+                var ran = Math.floor(Math.random()*35)+1;
+                arr.push(ran);
+            }
+                oContent.innerHTML = arr ;    //以上为止是建立7个随机数字彩票
+                history.pushState(arr,'');//存入历史记录
+
+
+
+        }
+
+        window.onpopstate=function(e){//点击历史按钮触发事件
+            oContent.innerHTML=e.state;//取出存入的历史记录
+        }
+
+        
+        
+    </script>
+</body>
+</html>

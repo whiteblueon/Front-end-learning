@@ -1,0 +1,59 @@
+新的选择器 
+    querySelector(翻译为：查询选择器)
+            var oDiv22 = document.querySelector('#div2 .aa');//兼容性问题 只能获取到第一个
+            var aaaa = document.querySelectorAll('#div2 .aa');//兼容性问题 能获取到全部
+            返回值类型为nodelist
+            对比 而var aDiv2 = document.getElementsByTagName('div');//返回值类型为HTMLCollection
+            
+            类似的：
+            console.log(oDiv1.children);// 返回值类型为HTMLCollection 只包含元素节点
+            console.log(oDiv1.childNodes);// 返回值类型为NodeList 包含文本节点和元素节点
+
+    classlist：
+        let oDiv4 = document.querySelector('#div4');
+        // console.log(typeof oDiv4.className);// string
+        // oDiv4.className += ' dd';
+        console.log(oDiv4.classList);// 返回值类型为DOMTokenList
+        oDiv4.classList.add('ee'); // 类似于jq .addClass()
+        oDiv4.classList.remove('bb');去掉
+        oDiv4.classList.toggle('ff'); 有就去掉没有就加上
+        oDiv4.classList.length//class长度
+
+
+
+自定义数据与js加载
+        <div id="div1" >div1</div>
+        <div id="div2" data-xx-yy="aa" data-zz="bb" cc="123"></div>
+        <!-- <script src="require.js" data-main="index"></script> -->
+        <script src="jquery-3.2.1.min.js"></script>
+
+        <script>
+        let oDiv1 = document.querySelector('#div1');
+        oDiv1.xx = '123';
+        console.log(oDiv1.xx);
+
+        oDiv1.setAttribute('yy', '456');
+        console.log(oDiv1.getAttribute('yy'));
+
+        $(function(){
+                let $div2 = $('#div2');
+                console.log($div2.data('xx-yy'));//可以有-
+
+
+        });
+
+        let oDiv2 = document.querySelector('#div2');
+        console.log(oDiv2.dataset);//DOMStringMap (map是一种键值对)
+        console.log(oDiv2.dataset.xxYy); //输出data开头的属性xxYy的值 不可以有-
+
+        </script>
+
+        js加载: 同步加载 等加载完当前代码再执行下面代码
+                script标签在head里并在style前面
+                <script src='a.js' defer></script> 
+                js 文件里  alert('666')
+                让js异步加载 不阻碍下面代码运行 没有defer html和css加载不出来 等alert运行完
+
+                async 标准浏览器 加载完 就执行 不能保证js执行顺序
+                defer ie 标准浏览器也支持 理论上 js文件都加载完 domContentload执行前执行 能保证顺序秩序
+
